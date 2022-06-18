@@ -23,11 +23,12 @@ public class Skill : MonoBehaviour
 
     #region --- Private Methods ----
     private void MagicBullet() {
-        GameObject skill = Instantiate(magicBullet, skillPoint.position, skillPoint.rotation);
-        Rigidbody2D rb = magicBullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(skillPoint.up * speed, ForceMode2D.Impulse);
+        GameObject skillObject = Instantiate(magicBullet, skillPoint.position, skillPoint.rotation);
+        Rigidbody2D rb = skillObject.GetComponent<Rigidbody2D>();
+        Vector2 x = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+        rb.AddForce(x * speed, ForceMode2D.Impulse);
         timer = timeToAttack;
-        Debug.Log($"<color=orange>【發射】</color> 當前射擊方向： {skillPoint.up}");
+        Debug.Log($"<color=orange>【發射】</color> 當前射擊方向： {x}");
     }
     #endregion
 
