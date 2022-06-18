@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour {
     }
 
     void Filp(float speed) {
-        transform.eulerAngles = speed > 0 ? new Vector3(0, 0, 0) : new Vector3(0, 180, 0);
+        gameObject.GetComponent<SpriteRenderer>().flipX = speed < 0 ? true : false;
     }
 
 }
