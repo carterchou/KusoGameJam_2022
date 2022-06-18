@@ -7,7 +7,7 @@ public class chooseMode : MonoBehaviour
 {
 	public static chooseMode intance;
 	public static int SelectCharaIdx = -1;
-	public static int firstIn = 0;
+	public static int firstIn = 1;
 
 	public GameObject block;
 	public AudioSource BGMPlayer;
@@ -26,7 +26,7 @@ public class chooseMode : MonoBehaviour
 		"阿爾姿",
 		"海唧",
 		"歐妲",
-		"尚未選擇角色"
+		"請選擇一名夥伴"
 	};
 
 	public static string[] charaInfos = {
@@ -38,7 +38,7 @@ public class chooseMode : MonoBehaviour
 		"人類，你給我跪下!",
 		"我是海唧！\n最兇惡獸襲來！！",
 		"我是歐妲！\n偉大的歐德姆布拉",
-		""
+		"夥伴會給予你初始的額外能力\n幫助你旗開得勝\n祝你武運昌隆"
 	};
 
 	private void Awake() {
@@ -52,7 +52,8 @@ public class chooseMode : MonoBehaviour
 			Fungus.Flowchart.BroadcastFungusMessage("intro");
 		}
 		else if(firstIn == 1) {
-			Fungus.Flowchart.BroadcastFungusMessage("SecondChance");
+			int index = Random.Range(1, 4);
+			Fungus.Flowchart.BroadcastFungusMessage("SecondChance" + index);
 		}
 		else {
 			IntroStoryCallback();
