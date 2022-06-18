@@ -10,7 +10,7 @@ public class endMode : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        endFlowchart.SetStringVariable("lastCharaName", chooseMode.charaNames[0]);
+        endFlowchart.SetStringVariable("lastCharaName", chooseMode.charaNames[chooseMode.SelectCharaIdx]);
     }
 
     public void BackTitle() {
