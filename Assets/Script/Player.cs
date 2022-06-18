@@ -46,5 +46,12 @@ public class Player : MonoBehaviour {
         float yAngle = inputHorizontal > 0 ? 0 : 180;
         transform.eulerAngles = new Vector3(0, yAngle, 0);
     }
+
+    /// <summary>
+    /// 將初始攻擊方式設定成你選擇的角色
+    /// </summary>
+    private void SetInitAttack() {
+
+    }
     #endregion
 }
