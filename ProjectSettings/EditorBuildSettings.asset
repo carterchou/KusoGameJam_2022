@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/chooseChara.unity
     guid: e8d648ed0f4429d499fe1685866f0fd4
+  - enabled: 1
+    path: Assets/Scenes/end.unity
+    guid: d6da8d61dae353d4481b7302afee61a8
   m_configObjects: {}

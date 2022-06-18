@@ -6276,9 +6276,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1654907428}
-  selectedCommands:
-  - {fileID: 1654907418}
+  - {fileID: 1654907341}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -8673,7 +8672,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300066, guid: 1c9ed9d1200c29d4cbfd2071028c1cd5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
