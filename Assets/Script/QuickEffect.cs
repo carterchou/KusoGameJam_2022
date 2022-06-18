@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class QuickEffect : MonoBehaviour
 {
+	static AudioSource SE_Player;
 	public RectTransform rect;
 	Vector2 originPos = Vector2.zero;
 
@@ -58,6 +59,30 @@ public class QuickEffect : MonoBehaviour
 				jumpType = 0;
 				rect.localPosition = originPos;
 			}
+		}
+	}
+
+	public void ClickSE() {
+		CheckSEPlayer();
+		AudioClip se = Resources.Load<AudioClip>("sound/SE/choose");
+		if(se != null) {
+			SE_Player.PlayOneShot(se);
+		}
+	}
+
+	public void hoverSE() {
+		CheckSEPlayer();
+		int i = 1;// Random.Range(1, 3);
+		AudioClip se = Resources.Load<AudioClip>("sound/SE/hover"+i);
+		if (se != null) {
+			SE_Player.PlayOneShot(se);
+		}
+	}
+
+	void CheckSEPlayer() { 
+		if(SE_Player == null) {
+			SE_Player = new GameObject("SE_Player").AddComponent<AudioSource>();
+			DontDestroyOnLoad(SE_Player.gameObject);
 		}
 	}
 }
