@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class titleMode : MonoBehaviour
 {
 	public void EnterGame() {
-
+		chooseMode.SelectCharaIdx = -1;
+		chooseMode.firstIn = 0;
+		SceneManager.LoadScene("chooseChara");
 	}
 
 	public void ExitGame() {

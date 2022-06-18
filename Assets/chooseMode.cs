@@ -7,8 +7,10 @@ public class chooseMode : MonoBehaviour
 {
 	public static chooseMode intance;
 	public static int SelectCharaIdx = -1;
-	public static bool firstIn = true;
+	public static int firstIn = 0;
 
+	public GameObject block;
+	public AudioSource BGMPlayer;
 	public Text[] selectCharaName;
 	public Text[] selectCharaInfo;
 	public GameObject[] selectCharaList; // 0 - 7 為角色、8為未選擇顯示用
@@ -41,12 +43,28 @@ public class chooseMode : MonoBehaviour
 
 	private void Awake() {
 		intance = this;
+		block.SetActive(true);
 		init();
 	}
 
 	private void Start() {
-		Fungus.Flowchart.BroadcastFungusMessage("FirstIN");
+		if (firstIn == 0) {
+			Fungus.Flowchart.BroadcastFungusMessage("intro");
+		}
+		else if(firstIn == 1) {
+			Fungus.Flowchart.BroadcastFungusMessage("SecondChance");
+		}
+		else {
+			IntroStoryCallback();
+		}
+		
 	}
+
+	public void IntroStoryCallback() {
+		BGMPlayer.Play();
+		block.SetActive(false);
+	}
+
 	void init() {
 		if (SelectCharaIdx < 0 || SelectCharaIdx > 7) {
 			SelectCharaIdx = -1;
