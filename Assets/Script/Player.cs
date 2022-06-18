@@ -43,8 +43,16 @@ public class Player : MonoBehaviour {
 
     private void Filp() {
         if (Mathf.Abs(inputHorizontal) < 0.1f) return;      // 水平值絕對值 < 0.1 不處理
-        float yAngle = inputHorizontal > 0 ? 0 : 180;
-        transform.eulerAngles = new Vector3(0, yAngle, 0);
+
+        gameObject.GetComponent<SpriteRenderer>().flipX = inputHorizontal < 0 ? true : false;
+        
+    }
+
+    /// <summary>
+    /// 將初始攻擊方式設定成你選擇的角色
+    /// </summary>
+    private void SetInitAttack() {
+
     }
     #endregion
 }
