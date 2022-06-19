@@ -30,13 +30,19 @@ public class Player : MonoBehaviour {
     }
 
     void Update() {
-        Filp();
-        UpdateAnimation();
-        hpbar.fillAmount = hp / 100f;
+        if(hp > 0) {
+            Filp();
+            UpdateAnimation();
+            hpbar.fillAmount = hp / 100f;
+		}
+		else {
+            hpbar.fillAmount = 0 / 100f;
+        }
+
     }
 
     private void FixedUpdate() {
-		if (inputHorizontal != 0 || inputVertical != 0) {
+		if (hp > 0 && (inputHorizontal != 0 || inputVertical != 0)) {
             Movement();
         }
         

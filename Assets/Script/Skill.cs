@@ -9,6 +9,7 @@ public class Skill : MonoBehaviour
     public GameObject magicBulletA;
     public GameObject magicBulletB;
     public float speed;
+    public Player player;
 
     public float timeToAttack;
     private float timer;
@@ -24,11 +25,13 @@ public class Skill : MonoBehaviour
     //}
 
     private void FixedUpdate() {
-        timer -= Time.deltaTime;
-        if (timer < 0f) {
-            if (switchKey == 0) MagicBulletA();
-            else MagicBulletB();
-        }         
+        if(player.hp > 0) {
+            timer -= Time.deltaTime;
+            if (timer < 0f) {
+                if (switchKey == 0) MagicBulletA();
+                else MagicBulletB();
+            }
+        }   
     }
     #endregion
 

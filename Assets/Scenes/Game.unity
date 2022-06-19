@@ -1744,6 +1744,11 @@ PrefabInstance:
       propertyPath: speed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4152271157858040425, guid: ff8956677e23c5e46b7b5e6a63b322a6,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 626862009}
     - target: {fileID: 4152271158020738653, guid: ff8956677e23c5e46b7b5e6a63b322a6,
         type: 3}
       propertyPath: m_Color.a
@@ -1751,6 +1756,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff8956677e23c5e46b7b5e6a63b322a6, type: 3}
+--- !u!114 &626862009 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4152271157858040343, guid: ff8956677e23c5e46b7b5e6a63b322a6,
+    type: 3}
+  m_PrefabInstance: {fileID: 626862008}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f08e873c4e84b7747ad5f610bc2f2552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &648423300 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4198644685728700667, guid: 3d5320f4f4d84ad42951c8ca6d27ed15,
