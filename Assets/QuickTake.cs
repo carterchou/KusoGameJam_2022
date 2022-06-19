@@ -16,7 +16,7 @@ public class QuickTake : MonoBehaviour
     }
 
 	private void Start() {
-		chooseMode.SelectCharaIdx = 0;
+		//chooseMode.SelectCharaIdx = 0; //Test
 		if (supportChara != null && supportChara.Length > 0 && chooseMode.SelectCharaIdx >= 0 && chooseMode.SelectCharaIdx <= 7) {
 			foreach (GameObject chara in supportChara) {
 				chara.SetActive(false);
