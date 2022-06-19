@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class QuickTake : MonoBehaviour
 {
+    public int killcount = 0;
+    public Text txtKillcount;
     public GameObject[] supportChara;
     public Player player;
 
     void Update()
     {
-
+        txtKillcount.text = $"À»±ş¼Æ¡G{killcount} / 60";
+        Win();
     }
 
 	private void Start() {
@@ -21,6 +25,16 @@ public class QuickTake : MonoBehaviour
             }
             supportChara[chooseMode.SelectCharaIdx].SetActive(true);
             //player.SetInitAttack(chooseMode.SelectCharaIdx);
+        }
+    }
+
+    public void CountKill() {
+        killcount += 1;
+    }
+
+    private void Win() {
+        if (killcount >= 60) {
+            SceneManager.LoadScene("end");
         }
     }
 }
