@@ -8,7 +8,6 @@ public class chooseChara : MonoBehaviour
 {
     public chooseMode choose;
     public QuickEffect effect;
-    public Player player;
     public Text name;
     public int index = -1;
     public void click() {
@@ -21,9 +20,8 @@ public class chooseChara : MonoBehaviour
             name.text = chooseMode.charaNames[index];
         }
     }
-    
+
     public void EnterGame() {
         SceneManager.LoadScene("Game");
-        player.SetInitAttack(index);
     }
 }

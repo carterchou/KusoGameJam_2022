@@ -1,11 +1,15 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
     #region 公開：欄位
     public float speed;
     public string parameterMove = "移動開關";
 
-    public Skill skill;
+    public Image hpbar;
+
+    public float hp;
     #endregion
 
     #region 私人：欄位
@@ -22,11 +26,13 @@ public class Player : MonoBehaviour {
     void Awake() {
         rig = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
+        //hpbar.fillAmount = 1;
     }
 
     void Update() {
         Filp();
         UpdateAnimation();
+        hpbar.fillAmount = hp / 100f;
     }
 
     private void FixedUpdate() {
@@ -44,7 +50,7 @@ public class Player : MonoBehaviour {
         Vector2 v = Vector2.zero;
         v.x = origin.x * Mathf.Sqrt(1 - (origin.y * origin.y) / 2.0f);
         v.y = origin.y * Mathf.Sqrt(1 - (origin.x * origin.x) / 2.0f);
-        Debug.Log(v * speed);
+        //Debug.Log(v * speed);
         rig.velocity = v * speed;
     }
 
@@ -59,11 +65,24 @@ public class Player : MonoBehaviour {
         
     }
 
+    private void OnTriggerEnter2D(Collider2D collision) {
+        gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
+        if (collision.name.Length > 15) {
+            hp -= 5;
+            gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+            if (hp <= 0) {
+                SceneManager.LoadScene("chooseChara");
+            }
+            //collision.gameObject.GetComponent<Animator>().SetTrigger(parameterHurt);
+            Debug.Log($"<color=orange>【接觸】</color>{collision.name.Length} + {hpbar.fillAmount}");
+        }
+    }
+
     /// <summary>
     /// 將初始攻擊方式設定成你選擇的角色
     /// </summary>
     public void SetInitAttack(int key) {
-        skill.MagicBulletA(key);
+        //skill.SetAttack(key);
     }
     #endregion
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2014327739825524566}
   - component: {fileID: -2987970905896497593}
   m_Layer: 8
-  m_Name: Magic Bullet A
+  m_Name: Bullet A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

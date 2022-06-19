@@ -12,6 +12,8 @@ public class Skill : MonoBehaviour
 
     public float timeToAttack;
     private float timer;
+
+    private int switchKey;
     #endregion
 
     #region --- Event ---
@@ -23,13 +25,23 @@ public class Skill : MonoBehaviour
 
     private void FixedUpdate() {
         timer -= Time.deltaTime;
-        if (timer < 0f) MagicBulletB();
+        if (timer < 0f) {
+            if (switchKey == 0) MagicBulletA();
+            else MagicBulletB();
+        }         
     }
     #endregion
 
     #region --- Private Methods ----
-    public void MagicBulletA(int key) {
+    public void SetAttack(int key) {
+        if (key < 4) {
+            switchKey = 0;
+        }
+        else switchKey = 1;
+        Debug.Log($"<color=orange>¡i¨¤¦â½s¸¹¡j</color>{key}");
+    }
 
+    public void MagicBulletA() {
 
         GameObject skillObject = Instantiate(magicBulletA, skillPoint.position, skillPoint.rotation);
         Rigidbody2D rb = skillObject.GetComponent<Rigidbody2D>();

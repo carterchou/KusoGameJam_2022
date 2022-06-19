@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour {
 
+    public Text txtKillcount;
+    private int killcount;
     public float speed;
     public int hp;
     public GameObject target;

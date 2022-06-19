@@ -650,7 +650,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.04397875}
@@ -689,6 +689,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3.5
   parameterMove: "\u79FB\u52D5\u958B\u95DC"
+  hp: 100
+  skill: {fileID: 0}
 --- !u!114 &4152271157858040425
 MonoBehaviour:
   m_ObjectHideFlags: 0

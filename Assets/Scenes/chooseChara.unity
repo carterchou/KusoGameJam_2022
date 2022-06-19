@@ -1904,6 +1904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choose: {fileID: 169240050}
   effect: {fileID: 522360340}
+  player: {fileID: 0}
   name: {fileID: 178180797}
   index: 7
 --- !u!114 &522360336
@@ -2041,6 +2042,7 @@ MonoBehaviour:
   jumpEffect: 0
   jumpDistance: 30
   jumpSpeed: 3
+  pauseMenu: {fileID: 0}
 --- !u!1 &530121334
 GameObject:
   m_ObjectHideFlags: 0
@@ -2348,6 +2350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choose: {fileID: 0}
   effect: {fileID: 0}
+  player: {fileID: 0}
   name: {fileID: 0}
   index: -1
 --- !u!114 &599142020
@@ -3105,6 +3108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choose: {fileID: 169240050}
   effect: {fileID: 803429446}
+  player: {fileID: 0}
   name: {fileID: 530121336}
   index: 2
 --- !u!114 &803429442
@@ -3242,6 +3246,7 @@ MonoBehaviour:
   jumpEffect: 0
   jumpDistance: 30
   jumpSpeed: 3
+  pauseMenu: {fileID: 0}
 --- !u!1 &825794354
 GameObject:
   m_ObjectHideFlags: 0
@@ -3909,6 +3914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choose: {fileID: 169240050}
   effect: {fileID: 1092829599}
+  player: {fileID: 0}
   name: {fileID: 951480309}
   index: 4
 --- !u!114 &1092829595
@@ -4046,6 +4052,7 @@ MonoBehaviour:
   jumpEffect: 0
   jumpDistance: 30
   jumpSpeed: 3
+  pauseMenu: {fileID: 0}
 --- !u!1 &1138782595
 GameObject:
   m_ObjectHideFlags: 0
@@ -4408,6 +4415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choose: {fileID: 169240050}
   effect: {fileID: 1241992434}
+  player: {fileID: 0}
   name: {fileID: 725849246}
   index: 3
 --- !u!114 &1241992430
@@ -4545,6 +4553,7 @@ MonoBehaviour:
   jumpEffect: 0
   jumpDistance: 30
   jumpSpeed: 3
+  pauseMenu: {fileID: 0}
 --- !u!1 &1272712662
 GameObject:
   m_ObjectHideFlags: 0
@@ -5208,6 +5217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choose: {fileID: 169240050}
   effect: {fileID: 1408332694}
+  player: {fileID: 0}
   name: {fileID: 1888048216}
   index: 6
 --- !u!114 &1408332690
@@ -5345,6 +5355,7 @@ MonoBehaviour:
   jumpEffect: 0
   jumpDistance: 30
   jumpSpeed: 3
+  pauseMenu: {fileID: 0}
 --- !u!1 &1458613036
 GameObject:
   m_ObjectHideFlags: 0
@@ -5428,7 +5439,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1458613039}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 599142019}
+        m_TargetAssemblyTypeName: chooseChara, Assembly-CSharp
+        m_MethodName: EnterGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1458613039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8988,6 +9011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choose: {fileID: 169240050}
   effect: {fileID: 1781002824}
+  player: {fileID: 0}
   name: {fileID: 735407239}
   index: 5
 --- !u!114 &1781002820
@@ -9125,6 +9149,7 @@ MonoBehaviour:
   jumpEffect: 0
   jumpDistance: 30
   jumpSpeed: 3
+  pauseMenu: {fileID: 0}
 --- !u!1 &1833443715
 GameObject:
   m_ObjectHideFlags: 0
@@ -9715,6 +9740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choose: {fileID: 169240050}
   effect: {fileID: 2046677380}
+  player: {fileID: 0}
   name: {fileID: 1240940442}
   index: 0
 --- !u!114 &2046677380
@@ -9733,6 +9759,7 @@ MonoBehaviour:
   jumpEffect: 0
   jumpDistance: 30
   jumpSpeed: 3
+  pauseMenu: {fileID: 0}
 --- !u!1 &2099306913
 GameObject:
   m_ObjectHideFlags: 0
@@ -10016,6 +10043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choose: {fileID: 169240050}
   effect: {fileID: 2137985988}
+  player: {fileID: 0}
   name: {fileID: 279095646}
   index: 1
 --- !u!114 &2137985984
@@ -10153,3 +10181,4 @@ MonoBehaviour:
   jumpEffect: 0
   jumpDistance: 30
   jumpSpeed: 3
+  pauseMenu: {fileID: 0}
