@@ -378,7 +378,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 77f462c2f6fa3c44089b5c62929c519a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2041,6 +2041,7 @@ MonoBehaviour:
   jumpEffect: 0
   jumpDistance: 30
   jumpSpeed: 3
+  pauseMenu: {fileID: 0}
 --- !u!1 &530121334
 GameObject:
   m_ObjectHideFlags: 0
@@ -3242,6 +3243,7 @@ MonoBehaviour:
   jumpEffect: 0
   jumpDistance: 30
   jumpSpeed: 3
+  pauseMenu: {fileID: 0}
 --- !u!1 &825794354
 GameObject:
   m_ObjectHideFlags: 0
@@ -4046,6 +4048,7 @@ MonoBehaviour:
   jumpEffect: 0
   jumpDistance: 30
   jumpSpeed: 3
+  pauseMenu: {fileID: 0}
 --- !u!1 &1138782595
 GameObject:
   m_ObjectHideFlags: 0
@@ -4545,6 +4548,7 @@ MonoBehaviour:
   jumpEffect: 0
   jumpDistance: 30
   jumpSpeed: 3
+  pauseMenu: {fileID: 0}
 --- !u!1 &1272712662
 GameObject:
   m_ObjectHideFlags: 0
@@ -5345,6 +5349,7 @@ MonoBehaviour:
   jumpEffect: 0
   jumpDistance: 30
   jumpSpeed: 3
+  pauseMenu: {fileID: 0}
 --- !u!1 &1458613036
 GameObject:
   m_ObjectHideFlags: 0
@@ -6276,8 +6281,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1654907359}
-  selectedCommands: []
+  - {fileID: 1654907341}
+  selectedCommands:
+  - {fileID: 1654907446}
   variables: []
   description: 
   stepPause: 0
@@ -8612,7 +8618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 120
   indentLevel: 0
-  volume: 0.6
+  volume: 0.4
   fadeDuration: 1
   waitUntilFinished: 1
 --- !u!1 &1703497182
@@ -9125,6 +9131,7 @@ MonoBehaviour:
   jumpEffect: 0
   jumpDistance: 30
   jumpSpeed: 3
+  pauseMenu: {fileID: 0}
 --- !u!1 &1833443715
 GameObject:
   m_ObjectHideFlags: 0
@@ -9733,6 +9740,7 @@ MonoBehaviour:
   jumpEffect: 0
   jumpDistance: 30
   jumpSpeed: 3
+  pauseMenu: {fileID: 0}
 --- !u!1 &2099306913
 GameObject:
   m_ObjectHideFlags: 0
@@ -10153,3 +10161,4 @@ MonoBehaviour:
   jumpEffect: 0
   jumpDistance: 30
   jumpSpeed: 3
+  pauseMenu: {fileID: 0}
