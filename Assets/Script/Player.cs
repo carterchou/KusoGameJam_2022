@@ -28,13 +28,22 @@ public class Player : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        Movement();
+		if (inputHorizontal != 0 || inputVertical != 0) {
+            Movement();
+        }
+        
     }
     #endregion
 
     #region ¨p¤H¡G¤èªk
     void Movement() {
-        rig.velocity = new Vector2(speed * inputHorizontal, speed * inputVertical);
+        //¾ò¶ê¬M®g
+        Vector2 origin = new Vector2(inputHorizontal, inputVertical);
+        Vector2 v = Vector2.zero;
+        v.x = origin.x * Mathf.Sqrt(1 - (origin.y * origin.y) / 2.0f);
+        v.y = origin.y * Mathf.Sqrt(1 - (origin.x * origin.x) / 2.0f);
+        Debug.Log(v * speed);
+        rig.velocity = v * speed;
     }
 
     private void UpdateAnimation() {
