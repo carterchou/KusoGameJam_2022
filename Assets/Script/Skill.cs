@@ -14,10 +14,15 @@ public class Skill : MonoBehaviour
     #endregion
 
     #region --- Event ---
-    private void Update() {
-        timer -= Time.deltaTime;
-        if(timer < 0f) MagicBullet();
+    //private void Update() {
+    //    timer -= Time.deltaTime;
+    //    if(timer < 0f) MagicBullet();
 
+    //}
+
+    private void FixedUpdate() {
+        timer -= Time.deltaTime;
+        if (timer < 0f) MagicBullet();
     }
     #endregion
 
@@ -25,10 +30,15 @@ public class Skill : MonoBehaviour
     private void MagicBullet() {
         GameObject skillObject = Instantiate(magicBullet, skillPoint.position, skillPoint.rotation);
         Rigidbody2D rb = skillObject.GetComponent<Rigidbody2D>();
-        Vector2 x = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-        rb.AddForce(x * speed, ForceMode2D.Impulse);
+        Vector3 x = new Vector3(Random.Range(-10, 10), Random.Range(-10, 10), 0);
+
+        float randomAngle = Random.Range(0f, 6.28319f); //generates random angle in radians
+        Vector2 randomVector = new Vector2(Mathf.Cos(randomAngle), Mathf.Sin(randomAngle));
+
+        //rb.AddForce(randomVector * speed, ForceMode2D.Impulse);
+        rb.velocity = randomVector * speed;
         timer = timeToAttack;
-        Debug.Log($"<color=orange>【發射】</color> 當前射擊方向： {x}");
+        //Debug.Log($"<color=orange>【發射】</color> 當前射擊方向： {randomAngle}");
     }
     #endregion
 

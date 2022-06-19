@@ -20,8 +20,8 @@ public class Spawner : MonoBehaviour
         GameObject enemy = Instantiate(enemys[Random.Range(0, enemys.Length)], GetBoundary(Random.Range(0, 4)), enemyPos.rotation);
         enemy.GetComponent<Enemy>().target = GameObject.Find("Player");
         timer = timeToSpawn;
-        Debug.Log($"<color=yellow>¡i¥Í©Ç¡j</color> ¥Í©ÇX½d³ò¡G{xMin.transform.position.x} ~ {xMax.transform.position.x}  " +
-            $"¥Í©ÇY½d³ò¡G{yMin.transform.position.y} ~ {yMax.transform.position.y}");
+        //Debug.Log($"<color=yellow>¡i¥Í©Ç¡j</color> ¥Í©ÇX½d³ò¡G{xMin.transform.position.x} ~ {xMax.transform.position.x}  " +
+        //    $"¥Í©ÇY½d³ò¡G{yMin.transform.position.y} ~ {yMax.transform.position.y}");
     }
 
     private Vector2 GetBoundary(int key) {
