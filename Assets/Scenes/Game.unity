@@ -1795,7 +1795,12 @@ PrefabInstance:
     - target: {fileID: 1628849202561367900, guid: 7a670df9560bbaf4d949816a0d57f60f,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303340930903962162, guid: 7a670df9560bbaf4d949816a0d57f60f,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8133285092727591045, guid: 7a670df9560bbaf4d949816a0d57f60f,
         type: 3}

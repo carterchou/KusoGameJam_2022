@@ -31,7 +31,7 @@ public class chooseMode : MonoBehaviour
 
 	public static string[] charaInfos = {
 		"沒有我，我看你要怎麼辦!\n哼!" ,
-		"人類好，我是瀕臨絕種團Rescute的露恰露恰\n請多多指教！",
+		"人類好，我是瀕臨絕種團\nRescute的露恰露恰\n請多多指教！",
 		"歐嗨歐貝\n我是瀕臨絕種團的隊長\n歐─────貝爾！",
 		"人類安安\n我是瀕臨絕種團的十五號\n今天也是還行的一天！",
 		"我是祈菈．貝希毛絲\n等著被我的尾巴掃到桌下!",

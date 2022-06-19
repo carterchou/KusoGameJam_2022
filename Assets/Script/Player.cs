@@ -102,6 +102,7 @@ public class Player : MonoBehaviour {
     }
 
     void Dead() {
+        chooseMode.firstIn = 1;
         SceneManager.LoadScene("chooseChara");
     }
 
