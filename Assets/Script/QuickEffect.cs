@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class QuickEffect : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class QuickEffect : MonoBehaviour
 	Vector2 endPos = Vector2.zero;
 	public float jumpDistance = 1;
 	public float jumpSpeed = 1;
+
+	public GameObject pauseMenu;
 
 	public void Awake() {
 		if (rect != null) {
@@ -78,11 +81,44 @@ public class QuickEffect : MonoBehaviour
 			SE_Player.PlayOneShot(se);
 		}
 	}
+	public void PauseSE() {
+		CheckSEPlayer();
+		AudioClip se = Resources.Load<AudioClip>("sound/SE/pause");
+		if (se != null) {
+			SE_Player.PlayOneShot(se);
+		}
+	}
 
 	void CheckSEPlayer() { 
 		if(SE_Player == null) {
 			SE_Player = new GameObject("SE_Player").AddComponent<AudioSource>();
 			DontDestroyOnLoad(SE_Player.gameObject);
 		}
+	}
+
+	public void PauseGame() {
+		if(pauseMenu != null) {
+			PauseSE();
+			pauseMenu.SetActive(true);
+		}
+		Time.timeScale = 0;
+	}
+
+	public void UnpauseGame() {
+		if (pauseMenu != null) {
+			pauseMenu.SetActive(false);
+		}
+		Time.timeScale = 1;
+	}
+
+	public void GoTitle() {
+		Time.timeScale = 1;
+		SceneManager.LoadScene("title");
+	}
+
+	public void GoChoose() {
+		Time.timeScale = 1;
+		chooseMode.firstIn = 1;
+		SceneManager.LoadScene("chooseChara");
 	}
 }
