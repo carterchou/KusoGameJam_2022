@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class QuickEffect : MonoBehaviour
 {
-	static AudioSource SE_Player;
+	public static AudioSource SE_Player;
 	public RectTransform rect;
 	Vector2 originPos = Vector2.zero;
 
@@ -89,7 +89,7 @@ public class QuickEffect : MonoBehaviour
 		}
 	}
 
-	void CheckSEPlayer() { 
+	public static void CheckSEPlayer() { 
 		if(SE_Player == null) {
 			SE_Player = new GameObject("SE_Player").AddComponent<AudioSource>();
 			DontDestroyOnLoad(SE_Player.gameObject);

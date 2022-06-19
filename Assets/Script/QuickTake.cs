@@ -5,15 +5,12 @@ using UnityEngine.UI;
 
 public class QuickTake : MonoBehaviour
 {
-    public Image hpBar;
     public GameObject[] supportChara;
     public Player player;
 
     void Update()
     {
-		if (hpBar != null) {
-            hpBar.fillAmount = 1 / 1;
-        }
+
     }
 
 	private void Start() {

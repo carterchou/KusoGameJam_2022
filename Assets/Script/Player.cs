@@ -71,11 +71,24 @@ public class Player : MonoBehaviour {
             hp -= 5;
             gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
             if (hp <= 0) {
-                SceneManager.LoadScene("chooseChara");
+                QuickEffect.CheckSEPlayer();
+                AudioClip se = Resources.Load<AudioClip>("Sound/se/charaDead");
+                QuickEffect.SE_Player.PlayOneShot(se);
+                Invoke("Dead", 2);
+			}
+			else {
+                QuickEffect.CheckSEPlayer();
+                int index = Random.Range(1, 3);
+                AudioClip se = Resources.Load<AudioClip>("Sound/se/charaHit" + index);
+                QuickEffect.SE_Player.PlayOneShot(se);
             }
             //collision.gameObject.GetComponent<Animator>().SetTrigger(parameterHurt);
             Debug.Log($"<color=orange>¡i±µÄ²¡j</color>{collision.name.Length} + {hpbar.fillAmount}");
         }
+    }
+
+    void Dead() {
+        SceneManager.LoadScene("chooseChara");
     }
 
     /// <summary>
