@@ -5,7 +5,7 @@ using UnityEngine;
 public class SkillObject : MonoBehaviour
 {
     public string parameterHurt = "Hurt";
-    public string parameterDead = "Dead";
+    public string parameterDead = "Death";
 
     //private GameObject enemyObject;
  
