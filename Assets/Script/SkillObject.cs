@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class SkillObject : MonoBehaviour
 {
-    public string parameterHurt = "Hurt";
-    public string parameterDead = "Death";
-
-    //private GameObject enemyObject;
+    private string parameterHurt = "Hurt";
+    private string parameterDeath = "Death";
  
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.name.Length > 15) {
@@ -15,8 +13,8 @@ public class SkillObject : MonoBehaviour
             collision.gameObject.GetComponent<Enemy>().hp -= 5;
             collision.gameObject.GetComponent<Animator>().SetTrigger(parameterHurt);
 
-            if (collision.gameObject.GetComponent<Enemy>().hp < 0) {
-                collision.gameObject.GetComponent<Animator>().SetTrigger(parameterDead);
+            if (collision.gameObject.GetComponent<Enemy>().hp <= 0) {
+                collision.gameObject.GetComponent<Animator>().SetTrigger(parameterDeath);
                 collision.gameObject.GetComponent<CircleCollider2D>().enabled = false;
             }             
         }

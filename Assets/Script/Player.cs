@@ -4,6 +4,8 @@ public class Player : MonoBehaviour {
     #region 公開：欄位
     public float speed;
     public string parameterMove = "移動開關";
+
+    public Skill skill;
     #endregion
 
     #region 私人：欄位
@@ -60,8 +62,8 @@ public class Player : MonoBehaviour {
     /// <summary>
     /// 將初始攻擊方式設定成你選擇的角色
     /// </summary>
-    private void SetInitAttack() {
-
+    public void SetInitAttack(int key) {
+        skill.MagicBulletA(key);
     }
     #endregion
 }

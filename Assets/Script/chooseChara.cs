@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class chooseChara : MonoBehaviour
 {
     public chooseMode choose;
     public QuickEffect effect;
+    public Player player;
     public Text name;
     public int index = -1;
     public void click() {
@@ -18,5 +20,10 @@ public class chooseChara : MonoBehaviour
         if(index >= 0 && name != null) {
             name.text = chooseMode.charaNames[index];
         }
+    }
+    
+    public void EnterGame() {
+        SceneManager.LoadScene("Game");
+        player.SetInitAttack(index);
     }
 }
