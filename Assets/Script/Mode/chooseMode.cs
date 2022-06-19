@@ -38,7 +38,7 @@ public class chooseMode : MonoBehaviour
 		"人類，你給我跪下!",
 		"我是海唧！\n最兇惡獸襲來！！",
 		"我是歐妲！\n偉大的歐德姆布拉",
-		"夥伴會給予你初始的額外能力\n幫助你旗開得勝\n祝你武運昌隆"
+		"夥伴會給予你\n初始的額外能力\n幫助你旗開得勝\n祝你武運昌隆"
 	};
 
 	private void Awake() {
