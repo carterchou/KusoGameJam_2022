@@ -1792,6 +1792,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1628849202561367900, guid: 7a670df9560bbaf4d949816a0d57f60f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8133285092727591045, guid: 7a670df9560bbaf4d949816a0d57f60f,
         type: 3}
       propertyPath: m_FillAmount
@@ -1901,6 +1906,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133285093231611235, guid: 7a670df9560bbaf4d949816a0d57f60f,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1333345009}
+    - target: {fileID: 8133285093231611235, guid: 7a670df9560bbaf4d949816a0d57f60f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133285093231611235, guid: 7a670df9560bbaf4d949816a0d57f60f,
+        type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8133285093231611294, guid: 7a670df9560bbaf4d949816a0d57f60f,
         type: 3}
