@@ -20,10 +20,19 @@ public class SkillObject : MonoBehaviour
             collision.gameObject.GetComponent<Animator>().SetTrigger(parameterHurt);
 
             if (collision.gameObject.GetComponent<Enemy>().hp <= 0) {
+                QuickEffect.CheckSEPlayer();
+                int index = Random.Range(1, 3);
+                AudioClip se = Resources.Load<AudioClip>("Sound/se/dead" + index);
+                QuickEffect.SE_Player.PlayOneShot(se);
                 collision.gameObject.GetComponent<Animator>().SetTrigger(parameterDeath);
                 collision.gameObject.GetComponent<CircleCollider2D>().enabled = false;
                 killCount += 1;
-            }             
+			}
+			else {
+                QuickEffect.CheckSEPlayer();
+                AudioClip se = Resources.Load<AudioClip>("Sound/se/hit");
+                QuickEffect.SE_Player.PlayOneShot(se);
+            }
         }
         Destroy(gameObject);
         Debug.Log($"<color=green>¡iÀ»±þ¼Æ¶q¡j</color> {killCount}");

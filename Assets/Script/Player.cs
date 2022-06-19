@@ -10,11 +10,6 @@ public class Player : MonoBehaviour {
     public Image hpbar;
 
     public float hp;
-
-    public float timeToHurt = 1f;
-    private float timer;
-
-    private bool canHurt;
     #endregion
 
     #region 私人：欄位
@@ -29,24 +24,28 @@ public class Player : MonoBehaviour {
 
     #region 事件
     void Awake() {
-        canHurt = true;
         rig = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
         //hpbar.fillAmount = 1;
     }
 
     void Update() {
-        Filp();
-        UpdateAnimation();
-        hpbar.fillAmount = hp / 100f;
-        timer -= Time.deltaTime;
-        if (timer < 0f) canHurt = true;
+        if(hp > 0) {
+            Filp();
+            UpdateAnimation();
+            hpbar.fillAmount = hp / 100f;
+		}
+		else {
+            hpbar.fillAmount = 0 / 100f;
+        }
+
     }
 
     private void FixedUpdate() {
-		if (inputHorizontal != 0 || inputVertical != 0) {
+		if (hp > 0 && (inputHorizontal != 0 || inputVertical != 0)) {
             Movement();
-        }       
+        }
+        
     }
     #endregion
 
@@ -73,15 +72,29 @@ public class Player : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.name.Length > 15 && canHurt) {
-            hp -= 6;
-            canHurt = false;
+        gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
+        if (collision.name.Length > 15) {
+            hp -= 5;
+            gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
             if (hp <= 0) {
-                SceneManager.LoadScene("chooseChara");
+                QuickEffect.CheckSEPlayer();
+                AudioClip se = Resources.Load<AudioClip>("Sound/se/charaDead");
+                QuickEffect.SE_Player.PlayOneShot(se);
+                Invoke("Dead", 2);
+			}
+			else {
+                QuickEffect.CheckSEPlayer();
+                int index = Random.Range(1, 3);
+                AudioClip se = Resources.Load<AudioClip>("Sound/se/charaHit" + index);
+                QuickEffect.SE_Player.PlayOneShot(se);
             }
             //collision.gameObject.GetComponent<Animator>().SetTrigger(parameterHurt);
             Debug.Log($"<color=orange>【接觸】</color>{collision.name.Length} + {hpbar.fillAmount}");
         }
+    }
+
+    void Dead() {
+        SceneManager.LoadScene("chooseChara");
     }
 
     /// <summary>
