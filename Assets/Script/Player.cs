@@ -10,6 +10,11 @@ public class Player : MonoBehaviour {
     public Image hpbar;
 
     public float hp;
+
+    public float timeToHurt = 1f;
+    private float timer;
+
+    private bool canHurt;
     #endregion
 
     #region 私人：欄位
@@ -24,6 +29,7 @@ public class Player : MonoBehaviour {
 
     #region 事件
     void Awake() {
+        canHurt = true;
         rig = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
         //hpbar.fillAmount = 1;
@@ -33,13 +39,14 @@ public class Player : MonoBehaviour {
         Filp();
         UpdateAnimation();
         hpbar.fillAmount = hp / 100f;
+        timer -= Time.deltaTime;
+        if (timer < 0f) canHurt = true;
     }
 
     private void FixedUpdate() {
 		if (inputHorizontal != 0 || inputVertical != 0) {
             Movement();
-        }
-        
+        }       
     }
     #endregion
 
@@ -66,10 +73,9 @@ public class Player : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
-        if (collision.name.Length > 15) {
-            hp -= 5;
-            gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+        if (collision.name.Length > 15 && canHurt) {
+            hp -= 6;
+            canHurt = false;
             if (hp <= 0) {
                 SceneManager.LoadScene("chooseChara");
             }

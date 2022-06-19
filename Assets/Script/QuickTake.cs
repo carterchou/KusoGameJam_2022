@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class QuickTake : MonoBehaviour
 {
+    public Text txtKillcount;
     public Image hpBar;
     public GameObject[] supportChara;
     public Player player;

@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour {
 
-    public Text txtKillcount;
-    private int killcount;
+    public int killcount = 0;
     public float speed;
     public int hp;
     public GameObject target;
@@ -24,6 +23,8 @@ public class Enemy : MonoBehaviour {
     }
 
     private void Destory() {
+        killcount += 1;
+        //QuickTake.txtKillcount.text = $"À»±þ¼Æ¡G{killcount} / 60";
         Destroy(gameObject);
         Debug.Log("<color=orange>¡i¦º¤`¡j</color>");
     }
