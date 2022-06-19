@@ -12,7 +12,7 @@ public class Player : MonoBehaviour {
     public float hp;
 
 
-    public float timeToHurt = 2f;
+    public float timeToHurt = 1f;
     private float timer;
 
     private bool canHurt;
@@ -81,7 +81,7 @@ public class Player : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
 
         if (collision.name.Length > 15 && canHurt) {
-            hp -= 6;
+            hp -= 9;
             canHurt = false;
             timer = timeToHurt;
             if (hp <= 0) {

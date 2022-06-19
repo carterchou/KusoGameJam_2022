@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour {
 
+    public QuickTake quickTake;
     public int killcount = 0;
     public float speed;
     public int hp;
     public GameObject target;
 
     private void FixedUpdate() {
-        FollowTarget();
+        FollowTarget();      
     }
 
     private void FollowTarget() {
@@ -23,9 +25,12 @@ public class Enemy : MonoBehaviour {
     }
 
     private void Destory() {
-        killcount += 1;
+
+        GameObject x = GameObject.Find("status");
+        x.GetComponent<QuickTake>().CountKill();
+        //GameObject.Find("status").GetComponent<QuickTake>().CountKill();
         //QuickTake.txtKillcount.text = $"À»±þ¼Æ¡G{killcount} / 60";
         Destroy(gameObject);
         Debug.Log("<color=orange>¡i¦º¤`¡j</color>");
-    }
+    }   
 }

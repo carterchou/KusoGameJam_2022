@@ -520,13 +520,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a408d0773b4982b498465e3bdc80fc79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToSpawn: 5
+  timeToSpawn: 2.5
   xMin: {fileID: 1010226916232380428}
   xMax: {fileID: 5934645240241988388}
   yMin: {fileID: 3805867741620830344}
   yMax: {fileID: 6911696136592792339}
   enemys:
   - {fileID: 4198644685728700666, guid: 3d5320f4f4d84ad42951c8ca6d27ed15, type: 3}
+  - {fileID: 8729102342931885390, guid: be54f7f710bf95f4d82b8e89ef7705ed, type: 3}
   enemyPos: {fileID: 4152271157841142252}
 --- !u!1 &4152271157858040339
 GameObject:
@@ -689,8 +690,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3.5
   parameterMove: "\u79FB\u52D5\u958B\u95DC"
+  hpbar: {fileID: 0}
   hp: 100
-  skill: {fileID: 0}
+  timeToHurt: 1
 --- !u!114 &4152271157858040425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -709,7 +711,8 @@ MonoBehaviour:
   magicBulletB: {fileID: 7897998452073361752, guid: 5ff85124f37928c45b188b39289d7b0b,
     type: 3}
   speed: 10
-  timeToAttack: 0.5
+  player: {fileID: 0}
+  timeToAttack: 0.25
 --- !u!1 &4152271158020738649
 GameObject:
   m_ObjectHideFlags: 0
