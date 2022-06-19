@@ -1662,8 +1662,19 @@ PrefabInstance:
     - target: {fileID: 4152271157841142255, guid: ff8956677e23c5e46b7b5e6a63b322a6,
         type: 3}
       propertyPath: timeToSpawn
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 4152271157841142255, guid: ff8956677e23c5e46b7b5e6a63b322a6,
+        type: 3}
+      propertyPath: enemys.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152271157841142255, guid: ff8956677e23c5e46b7b5e6a63b322a6,
+        type: 3}
+      propertyPath: enemys.Array.data[1]
+      value: 
+      objectReference: {fileID: 8729102342931885390, guid: be54f7f710bf95f4d82b8e89ef7705ed,
+        type: 3}
     - target: {fileID: 4152271157858040338, guid: ff8956677e23c5e46b7b5e6a63b322a6,
         type: 3}
       propertyPath: m_RootOrder
@@ -1737,7 +1748,7 @@ PrefabInstance:
     - target: {fileID: 4152271157858040343, guid: ff8956677e23c5e46b7b5e6a63b322a6,
         type: 3}
       propertyPath: speed
-      value: 2.6
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 4152271157858040425, guid: ff8956677e23c5e46b7b5e6a63b322a6,
         type: 3}
