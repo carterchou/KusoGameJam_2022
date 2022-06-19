@@ -1300,7 +1300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killcount: 0
-  txtKillcount: {fileID: 0}
+  txtKillcount: {fileID: 4303340930903962162}
   supportChara:
   - {fileID: 8133285093571073431}
   - {fileID: 8133285092507340534}
